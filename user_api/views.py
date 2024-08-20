@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.http import Http404
 from rest_framework import status
 from rest_framework.views import APIView
@@ -6,10 +5,6 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .serializers import UserSerializer
 
-
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello world")    
 class UserView(APIView):
     def get(self, request):
         users = User.objects.all()
